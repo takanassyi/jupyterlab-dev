@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  jupyterlab:
+    image: jupyter/datascience-notebook
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan/work
+    working_dir: "/home/jovyan/work"
+    command: start.sh jupyter lab --NotebookApp.token=''
